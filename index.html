@@ -290,5 +290,49 @@ a{color:inherit;text-decoration:none}
   <a href="tokushoho.html">特定商取引法に基づく表記</a>&emsp;|&emsp;<a href="privacy.html">プライバシーポリシー</a>
 </div>
 
+<!-- Popup Overlay -->
+<div id="linePopup" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.65);z-index:9999;align-items:center;justify-content:center;opacity:0;transition:opacity .4s ease">
+  <div style="position:relative;background:#0D0D0D;border:1px solid rgba(184,151,106,.3);border-radius:8px;max-width:400px;width:90%;padding:48px 32px 40px;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.5)">
+    <!-- Close -->
+    <div onclick="closePopup()" style="position:absolute;top:12px;right:16px;width:32px;height:32px;cursor:pointer;display:flex;align-items:center;justify-content:center;border-radius:50%;background:rgba(255,255,255,.1);transition:background .2s" onmouseover="this.style.background='rgba(255,255,255,.2)'" onmouseout="this.style.background='rgba(255,255,255,.1)'">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><line x1="1" y1="1" x2="13" y2="13" stroke="rgba(255,255,255,.6)" stroke-width="1.5" stroke-linecap="round"/><line x1="13" y1="1" x2="1" y2="13" stroke="rgba(255,255,255,.6)" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </div>
+    <!-- Logo -->
+    <div style="font-family:Cormorant Garamond,serif;font-size:28px;letter-spacing:6px;color:#fff;font-weight:300;margin-bottom:32px">N.STONE</div>
+    <!-- Copy -->
+    <div style="font-family:'Noto Serif JP',serif;font-size:16px;color:#fff;line-height:2.2;letter-spacing:1px;margin-bottom:12px">
+      間もなく販売開始を<br>予定しています。
+    </div>
+    <div style="font-family:'Noto Serif JP',serif;font-size:14px;color:rgba(255,255,255,.6);line-height:2;letter-spacing:.5px;margin-bottom:12px">
+      販売のお知らせは<br>限られた方のみにお届けします。
+    </div>
+    <div style="width:30px;height:1px;background:rgba(184,151,106,.5);margin:20px auto"></div>
+    <div style="font-family:'Noto Serif JP',serif;font-size:14px;color:var(--gold-light);line-height:2;letter-spacing:.5px;margin-bottom:28px">
+      このご縁を逃さないため、<br>LINEに登録してお待ちください。
+    </div>
+    <!-- LINE Button -->
+    <a href="https://utage-system.com/line/open/QkawK43PbR5y" class="line-btn" onclick="if(typeof fbq!=='undefined')fbq('track','Lead')" style="font-size:15px;padding:16px 36px;width:100%;max-width:300px;justify-content:center;display:inline-flex">
+      <svg viewBox="0 0 24 24" style="width:22px;height:22px;fill:#fff"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+      特別な案内を待つ
+    </a>
+  </div>
+</div>
+
+<script>
+function closePopup(){
+  var p=document.getElementById('linePopup');
+  p.style.opacity='0';
+  setTimeout(function(){p.style.display='none'},400);
+  sessionStorage.setItem('nstone_popup','1');
+}
+if(!sessionStorage.getItem('nstone_popup')){
+  setTimeout(function(){
+    var p=document.getElementById('linePopup');
+    p.style.display='flex';
+    requestAnimationFrame(function(){requestAnimationFrame(function(){p.style.opacity='1'})});
+  },12000);
+}
+</script>
+
 </body>
 </html>
