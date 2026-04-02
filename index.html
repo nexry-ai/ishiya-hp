@@ -20,82 +20,213 @@ document,"script","https://connect.facebook.net/en_US/fbevents.js");
 fbq("init","3924821841156078");
 fbq("track","PageView");
 </script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=3924821841156078&ev=PageView&noscript=1"/></noscript>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--ivory:#FAF8F5;--charcoal:#2C2C2C;--warm-gray:#9B9590;--light-gray:#E8E4E0;--gold:#B8976A;--gold-light:#D4C4A8;--deep:#1A1A1A;--cream:#F5F1EC}
-body{font-family:'Noto Serif JP',serif;background:var(--ivory);color:var(--charcoal);min-height:100vh;-webkit-font-smoothing:antialiased}
-.header{text-align:center;padding:60px 24px 40px;border-bottom:1px solid var(--light-gray)}
-.divider{width:40px;height:1px;background:var(--gold);margin:24px auto}
+:root{
+  --ivory:#FAF8F5;--charcoal:#2C2C2C;--warm-gray:#9B9590;--light-gray:#E8E4E0;
+  --gold:#B8976A;--gold-light:#D4C4A8;--deep:#1A1A1A;--cream:#F5F1EC;
+  --line-green:#06C755;--soldout-red:#C0392B;
+}
+body{font-family:'Noto Serif JP',serif;background:var(--ivory);color:var(--charcoal);min-height:100vh;-webkit-font-smoothing:antialiased;font-size:16px;line-height:1.8}
+a{color:inherit;text-decoration:none}
+.divider{width:40px;height:1px;background:var(--gold);margin:20px auto}
+.divider-white{width:40px;height:1px;background:var(--gold-light);margin:20px auto}
 
-/* Hero */
-.hero{text-align:center;padding:80px 24px 60px;background:radial-gradient(ellipse 800px 300px at 50% 50%,rgba(184,151,106,0.06) 0%,transparent 70%)}
-.hero h1{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:400;letter-spacing:2px;line-height:1.6;margin-bottom:16px}
-.hero p{font-size:13px;color:var(--warm-gray);line-height:2.2;letter-spacing:1px}
+/* ===== Header ===== */
+.header{text-align:center;padding:48px 24px 32px;border-bottom:1px solid var(--light-gray)}
 
-/* Section */
-.section{padding:60px 24px;max-width:520px;margin:0 auto}
-.section-label{font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:5px;color:var(--gold);text-transform:uppercase;text-align:center;margin-bottom:32px}
-.section-title{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:400;text-align:center;letter-spacing:2px;margin-bottom:40px}
+/* ===== Secret Banner ===== */
+.secret-banner{background:var(--deep);color:rgba(255,255,255,.85);text-align:center;padding:20px 24px;font-size:13px;letter-spacing:1.5px;line-height:1.8}
+.secret-banner .icon{font-size:18px;display:block;margin-bottom:6px}
 
-/* Features */
-.features{display:flex;flex-direction:column;gap:32px}
+/* ===== Top CTA ===== */
+.top-cta{text-align:center;padding:56px 24px 64px;background:linear-gradient(180deg,var(--ivory) 0%,var(--cream) 100%)}
+.top-cta h1{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;letter-spacing:1.5px;line-height:1.8;margin-bottom:12px;color:var(--charcoal)}
+.top-cta .sub{font-size:14px;color:var(--warm-gray);line-height:2;margin-bottom:32px;max-width:440px;margin-left:auto;margin-right:auto}
+.line-btn{display:inline-flex;align-items:center;gap:10px;padding:20px 48px;background:var(--line-green);color:#fff;font-family:'Noto Serif JP',serif;font-size:16px;font-weight:500;letter-spacing:2px;border-radius:8px;text-decoration:none;transition:transform .2s,box-shadow .2s;box-shadow:0 4px 16px rgba(6,199,85,.35)}
+.line-btn:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(6,199,85,.45)}
+.line-btn svg{width:24px;height:24px;fill:#fff}
+.line-note{font-size:12px;color:var(--warm-gray);margin-top:16px;letter-spacing:1px}
+
+/* ===== Section Common ===== */
+.section{padding:72px 24px;max-width:520px;margin:0 auto}
+.section-label{font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:5px;color:var(--gold);text-transform:uppercase;text-align:center;margin-bottom:12px}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:400;text-align:center;letter-spacing:2px;margin-bottom:48px;line-height:1.6}
+
+/* ===== Products ===== */
+.products{display:flex;flex-direction:column;gap:48px;max-width:520px;margin:0 auto;padding:0 24px 72px}
+.product-card{border:1px solid var(--light-gray);background:#fff;position:relative;overflow:hidden;border-radius:4px;box-shadow:0 4px 20px rgba(0,0,0,.06);transition:box-shadow .3s}
+.product-card:hover{box-shadow:0 8px 32px rgba(0,0,0,.1)}
+.product-img{width:100%;height:300px;background:var(--cream);display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--warm-gray);position:relative}
+.product-info{padding:28px 24px}
+.product-name{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;letter-spacing:2px;margin-bottom:4px}
+.product-sub{font-size:13px;color:var(--gold);letter-spacing:2px;margin-bottom:16px}
+.product-price{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:400;margin-bottom:4px}
+.product-tax{font-size:12px;color:var(--warm-gray)}
+.product-limit{display:inline-block;margin-top:12px;font-size:12px;letter-spacing:1.5px;color:var(--warm-gray);border:1px solid var(--light-gray);padding:4px 12px;border-radius:2px}
+.sold-out{position:absolute;top:0;right:0;background:var(--soldout-red);color:#fff;font-family:'Cormorant Garamond',serif;font-size:13px;font-weight:600;letter-spacing:3px;padding:10px 20px;text-transform:uppercase}
+
+/* ===== Mid CTA ===== */
+.mid-cta{text-align:center;padding:80px 24px;background:var(--deep);color:#fff}
+.mid-cta h2{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:400;letter-spacing:2px;margin-bottom:16px}
+.mid-cta p{font-size:14px;color:rgba(255,255,255,.6);line-height:2.2;margin-bottom:36px;max-width:420px;margin-left:auto;margin-right:auto}
+
+/* ===== Testimonials ===== */
+.testimonials{display:flex;flex-direction:column;gap:36px}
+.testimonial{background:#fff;border:1px solid var(--light-gray);border-radius:4px;padding:28px 24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.testimonial-text{font-size:15px;line-height:2;margin-bottom:12px;color:var(--charcoal)}
+.testimonial-text::before{content:"「";color:var(--gold);font-size:20px}
+.testimonial-text::after{content:"」";color:var(--gold);font-size:20px}
+.testimonial-author{font-size:12px;color:var(--warm-gray);text-align:right;letter-spacing:1px}
+.testimonial-disclaimer{text-align:center;font-size:11px;color:var(--warm-gray);margin-top:24px;letter-spacing:0.5px}
+
+/* ===== Features ===== */
+.features{display:flex;flex-direction:column;gap:40px}
 .feature{text-align:center}
-.feature-icon{font-size:28px;margin-bottom:12px}
-.feature-title{font-size:14px;font-weight:500;letter-spacing:1px;margin-bottom:8px}
-.feature-desc{font-size:12px;color:var(--warm-gray);line-height:2}
+.feature-icon{font-size:32px;margin-bottom:14px}
+.feature-title{font-size:15px;font-weight:500;letter-spacing:1px;margin-bottom:10px}
+.feature-desc{font-size:13px;color:var(--warm-gray);line-height:2.2}
 
-/* Products */
-.products{display:flex;flex-direction:column;gap:40px;max-width:520px;margin:0 auto;padding:0 24px}
-.product-card{border:1px solid var(--light-gray);background:#fff;position:relative;overflow:hidden}
-.product-img{width:100%;height:280px;background:var(--cream);display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--warm-gray)}
-.product-info{padding:24px}
-.product-name{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:400;letter-spacing:2px;margin-bottom:4px}
-.product-sub{font-size:12px;color:var(--gold);letter-spacing:2px;margin-bottom:16px}
-.product-price{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:400;margin-bottom:4px}
-.product-tax{font-size:11px;color:var(--warm-gray)}
-.sold-out{position:absolute;top:16px;right:16px;background:rgba(44,44,44,0.85);color:#fff;font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:3px;padding:6px 14px;text-transform:uppercase}
+/* ===== Notice ===== */
+.notice{text-align:center;padding:48px 24px;background:var(--cream);border-top:1px solid var(--light-gray);border-bottom:1px solid var(--light-gray)}
+.notice p{font-size:13px;color:var(--warm-gray);line-height:2;max-width:400px;margin:0 auto;letter-spacing:0.5px}
+.notice .icon{font-size:18px;display:block;margin-bottom:10px}
 
-/* CTA */
-.cta-section{text-align:center;padding:80px 24px;background:var(--deep);color:#fff}
-.cta-section h2{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:400;letter-spacing:2px;margin-bottom:16px}
-.cta-section p{font-size:13px;color:rgba(255,255,255,.6);line-height:2.2;margin-bottom:32px;max-width:400px;margin-left:auto;margin-right:auto}
-.cta-button{display:inline-block;padding:18px 48px;background:var(--gold);color:#fff;text-decoration:none;font-family:'Noto Serif JP',serif;font-size:14px;letter-spacing:3px;transition:opacity .3s}
-.cta-button:hover{opacity:.85}
+/* ===== Bottom CTA ===== */
+.bottom-cta{text-align:center;padding:88px 24px;background:var(--deep);color:#fff}
+.bottom-cta .fate{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:300;color:var(--gold-light);letter-spacing:2px;line-height:2;margin-bottom:32px;font-style:italic}
+.bottom-cta p{font-size:14px;color:rgba(255,255,255,.55);line-height:2;margin-bottom:36px;max-width:400px;margin-left:auto;margin-right:auto}
 
-/* Stats */
-.stats{display:flex;justify-content:center;gap:40px;flex-wrap:wrap;max-width:520px;margin:0 auto;padding:0 24px}
-.stat{text-align:center}
-.stat-num{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:400;color:var(--charcoal)}
-.stat-label{font-size:11px;color:var(--warm-gray);letter-spacing:1px;margin-top:4px}
+/* ===== Footer ===== */
+.footer{text-align:center;padding:40px 24px;border-top:1px solid var(--light-gray);font-size:11px;color:var(--warm-gray);letter-spacing:1px;line-height:2.4}
+.footer a{color:var(--warm-gray);text-decoration:none;transition:color .2s}
+.footer a:hover{color:var(--gold)}
 
-/* FAQ */
-.faq{max-width:520px;margin:0 auto;padding:0 24px}
-.faq-item{border-bottom:1px solid var(--light-gray);padding:24px 0}
-.faq-q{font-size:14px;font-weight:500;margin-bottom:8px;letter-spacing:.5px}
-.faq-a{font-size:13px;color:var(--warm-gray);line-height:2}
-
-/* Footer */
-.footer{text-align:center;padding:40px 24px;border-top:1px solid var(--light-gray);font-size:10px;color:var(--warm-gray);letter-spacing:1px;line-height:2}
-.footer a{color:var(--warm-gray);text-decoration:none}
+/* ===== Responsive ===== */
+@media(max-width:520px){
+  .top-cta h1{font-size:20px}
+  .line-btn{padding:18px 36px;font-size:15px;width:100%;justify-content:center;max-width:360px}
+  .product-img{height:240px}
+  .section{padding:56px 20px}
+  .products{padding:0 20px 56px}
+}
 </style>
 </head>
 <body>
+
+<!-- Secret Banner -->
+<div class="secret-banner">
+  <span class="icon">🔒</span>
+  このページは、限られた方のみにご案内しています
+</div>
 
 <!-- Header -->
 <div class="header">
   <img src="logo-horizontal.jpg" alt="Ishiya" style="height:80px;opacity:0.9">
 </div>
 
-<!-- Hero -->
-<div class="hero">
-  <h1>あなたの人生を変える、<br>たった一つの石。</h1>
+<!-- Top CTA -->
+<div class="top-cta">
+  <h1>現在、すべての商品が<br>完売しております</h1>
   <div class="divider"></div>
-  <p>鑑定士が産地で一石ずつ選んだ、<br>完全一点物のパワーストーン。</p>
+  <p class="sub">次回販売のご案内は、<br>LINE登録者様にのみお届けいたします。</p>
+  <a href="https://line.me/R/ti/p/@304bbnks" class="line-btn" onclick="if(typeof fbq!=='undefined')fbq('track','Lead')">
+    <svg viewBox="0 0 24 24"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+    LINE登録して次回案内を受け取る
+  </a>
+  <div class="line-note">＊ 登録無料・いつでもブロック可能です</div>
 </div>
 
-<!-- About -->
+<!-- Products Section -->
+<div class="section" style="padding-bottom:24px">
+  <div class="section-label">Collection</div>
+  <div class="section-title">取り扱い石</div>
+</div>
+<div class="products">
+
+  <!-- ルチルクォーツ -->
+  <div class="product-card">
+    <div class="sold-out">SOLD OUT</div>
+    <div class="product-img">Stone Image</div>
+    <div class="product-info">
+      <div class="product-name">ルチルクォーツ</div>
+      <div class="product-sub">金運・事業成功</div>
+      <div class="product-price">¥98,000</div>
+      <div class="product-tax">税込・送料無料・鑑別書付</div>
+      <div class="product-limit">限定 5 本 — 完売</div>
+    </div>
+  </div>
+
+  <!-- スーパーセブン -->
+  <div class="product-card">
+    <div class="sold-out">SOLD OUT</div>
+    <div class="product-img">Stone Image</div>
+    <div class="product-info">
+      <div class="product-name">スーパーセブン</div>
+      <div class="product-sub">総合運・霊的覚醒</div>
+      <div class="product-price">¥148,000</div>
+      <div class="product-tax">税込・送料無料・鑑別書付</div>
+      <div class="product-limit">限定 3 本 — 完売</div>
+    </div>
+  </div>
+
+  <!-- ラリマー -->
+  <div class="product-card">
+    <div class="sold-out">SOLD OUT</div>
+    <div class="product-img">Stone Image</div>
+    <div class="product-info">
+      <div class="product-name">ラリマー</div>
+      <div class="product-sub">癒し・心の浄化</div>
+      <div class="product-price">¥198,000</div>
+      <div class="product-tax">税込・送料無料・鑑別書付</div>
+      <div class="product-limit">限定 2 本 — 完売</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Mid CTA -->
+<div class="mid-cta">
+  <div class="section-label" style="color:var(--gold-light)">Next Drop</div>
+  <div class="divider-white"></div>
+  <h2>次回入荷のご案内</h2>
+  <p>販売の準備ができましたら、<br>LINE登録いただいた方へ優先的にご案内いたします。</p>
+  <a href="https://line.me/R/ti/p/@304bbnks" class="line-btn" onclick="if(typeof fbq!=='undefined')fbq('track','Lead')">
+    <svg viewBox="0 0 24 24"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+    LINE登録する（無料）
+  </a>
+</div>
+
+<!-- Testimonials -->
+<div class="section">
+  <div class="section-label">Voice</div>
+  <div class="section-title">お客様の声</div>
+  <div class="testimonials">
+    <div class="testimonial">
+      <div class="testimonial-text">ルチルを持ち始めてから、停滞していた仕事が動き出しました。気持ちの面でも前向きになれた気がします</div>
+      <div class="testimonial-author">38歳・会社員</div>
+    </div>
+    <div class="testimonial">
+      <div class="testimonial-text">スーパーセブンの鑑別書を見た時、涙が出ました。本物の石を手にしているんだと実感できました</div>
+      <div class="testimonial-author">42歳・主婦</div>
+    </div>
+    <div class="testimonial">
+      <div class="testimonial-text">ラリマーに出会えたのは奇跡だと思っています。毎日身につけていると、心が穏やかになります</div>
+      <div class="testimonial-author">35歳・自営業</div>
+    </div>
+  </div>
+  <div class="testimonial-disclaimer">※ 個人の感想であり、効果を保証するものではありません</div>
+</div>
+
+<!-- About / Brand Story -->
 <div class="section">
   <div class="section-label">About Ishiya</div>
+  <div class="section-title">ISHIYAとは</div>
+  <p style="text-align:center;font-size:14px;color:var(--warm-gray);line-height:2.4;margin-bottom:48px;max-width:440px;margin-left:auto;margin-right:auto">
+    「本物の石を、本物を求める方へ。」<br>
+    ISHIYAは、鑑定士が世界各地の産地に足を運び、<br>一石ずつ選び抜いた天然パワーストーンだけを<br>お届けするブランドです。
+  </p>
   <div class="features">
     <div class="feature">
       <div class="feature-icon">🔍</div>
@@ -115,92 +246,20 @@ body{font-family:'Noto Serif JP',serif;background:var(--ivory);color:var(--charc
   </div>
 </div>
 
-<!-- Products -->
-<div class="section" style="padding-bottom:40px">
-  <div class="section-label">Collection</div>
-  <div class="section-title">取り扱い石</div>
-</div>
-<div class="products">
-  <div class="product-card">
-    <div class="sold-out">Sold Out</div>
-    <div class="product-img">Stone Image</div>
-    <div class="product-info">
-      <div class="product-name">ルチルクォーツ</div>
-      <div class="product-sub">金運の最高峰</div>
-      <div class="product-price">¥98,000</div>
-      <div class="product-tax">税込・送料無料・鑑別書付</div>
-    </div>
-  </div>
-  <div class="product-card">
-    <div class="sold-out">Sold Out</div>
-    <div class="product-img">Stone Image</div>
-    <div class="product-info">
-      <div class="product-name">スーパーセブン</div>
-      <div class="product-sub">7つの奇跡が宿る万能石</div>
-      <div class="product-price">¥148,000</div>
-      <div class="product-tax">税込・送料無料・鑑別書付</div>
-    </div>
-  </div>
-  <div class="product-card">
-    <div class="sold-out">Sold Out</div>
-    <div class="product-img">Stone Image</div>
-    <div class="product-info">
-      <div class="product-name">ラリマー</div>
-      <div class="product-sub">世界三大ヒーリングストーン</div>
-      <div class="product-price">¥198,000</div>
-      <div class="product-tax">税込・送料無料・鑑別書付</div>
-    </div>
-  </div>
+<!-- Notice -->
+<div class="notice">
+  <span class="icon">🔒</span>
+  <p>このページは限られた方のみにご案内しています。<br>他の方へのページ共有はお控えください。</p>
 </div>
 
-<!-- CTA -->
-<div class="cta-section" style="margin-top:60px">
-  <div class="section-label" style="color:var(--gold-light)">Next Drop</div>
-  <h2>次回入荷のご案内</h2>
-  <p>すべての商品は完売いたしました。<br>次回入荷時に優先的にご案内いたします。</p>
-  <a href="https://line.me/R/ti/p/@304bbnks" class="cta-button" id="line-cta" onclick="if(typeof fbq!=='undefined')fbq('track','Lead')">入荷通知を受け取る</a>
-</div>
-
-<!-- Stats -->
-<div class="section">
-  <div class="section-label">Track Record</div>
-  <div class="stats">
-    <div class="stat">
-      <div class="stat-num">2,847</div>
-      <div class="stat-label">鑑定数</div>
-    </div>
-    <div class="stat">
-      <div class="stat-num">94.2%</div>
-      <div class="stat-label">リピート率</div>
-    </div>
-    <div class="stat">
-      <div class="stat-num">4.9</div>
-      <div class="stat-label">満足度</div>
-    </div>
-  </div>
-</div>
-
-<!-- FAQ -->
-<div class="section">
-  <div class="section-label">FAQ</div>
-  <div class="faq">
-    <div class="faq-item">
-      <div class="faq-q">なぜ抽選なのですか？</div>
-      <div class="faq-a">一点物のため、数に限りがございます。公平にお届けするため、抽選制とさせていただいております。</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">届くまでどれくらいですか？</div>
-      <div class="faq-a">ご当選後、5〜7営業日でお届けいたします。</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">返品はできますか？</div>
-      <div class="faq-a">お届けから14日間、返品を承っております。</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">石の選び方がわかりません。</div>
-      <div class="faq-a">LINE登録後、専属の鑑定士があなたに最適な石をお選びいたします。</div>
-    </div>
-  </div>
+<!-- Bottom CTA -->
+<div class="bottom-cta">
+  <div class="fate">あなたがこのページに辿り着いたこと、<br>それ自体が特別なご縁です。</div>
+  <p>次回の販売開始時に、<br>最優先でご連絡いたします。</p>
+  <a href="https://line.me/R/ti/p/@304bbnks" class="line-btn" onclick="if(typeof fbq!=='undefined')fbq('track','Lead')">
+    <svg viewBox="0 0 24 24"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+    LINE登録して次回案内を受け取る
+  </a>
 </div>
 
 <!-- Footer -->
